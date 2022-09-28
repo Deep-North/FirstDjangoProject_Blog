@@ -20,5 +20,5 @@ def leave_comment(request, article_id):
         a = Article.objects.get(id=article_id)
     except:
         raise Http404('Статья не найдена')
-    a.comment_set.create(author_name = request.post['name'], comment_text = request.post['text'])
+    a.comment_set.create(author_name = request.POST['name'], comment_text = request.POST['text'])
     return HttpResponseRedirect(reverse('articles:detail', args = (a.id, )))
