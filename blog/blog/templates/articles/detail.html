@@ -12,9 +12,7 @@
     <hr>
 
     {% if latest_comments_list %}
-        {{latest_comments_list}}
         {% for с in latest_comments_list %}
-
             <p>
                 <strong>{{c.author_name}}</strong>
                 <p>{{c.comment_text}}</p>
